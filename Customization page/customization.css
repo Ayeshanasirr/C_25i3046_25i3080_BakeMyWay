@@ -1,0 +1,185 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px 40px;
+  background: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+    width: 10;
+    height: 10;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.search input {
+  padding: 8px 15px;
+  width: 200px;
+  border-radius: 20px;
+  border: none;
+  background: #eee;
+}
+
+nav a {
+  margin: 0 8px;
+  text-decoration: none;
+  color: black;
+}
+
+.icons {
+  font-size: 16px;
+}
+
+/* MAIN SECTION */
+.main {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px;
+  background: #fdf4f4;
+  position: relative;
+}
+
+.left-shape {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: #eadfdf;
+  position: absolute;
+  left: -60px;
+  top: 40px;
+}
+
+.center {
+  text-align: center;
+  width: 40%;
+  z-index: 1;
+}
+
+.cake-box {
+  margin: 30px auto;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cake-image{
+    width: 10;
+    height: 10;
+}
+
+.cart-btn {
+  background: #4dd0e1;
+  border: none;
+  padding: 15px 30px;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.options {
+  width: 35%;
+}
+
+.price-tag {
+  float: right;
+  background: #46c7d9;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+
+.choices span {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.shapes, .frosting {
+  display: flex;
+  gap: 15px;
+  margin: 10px 0 25px 0;
+}
+
+.shapes div, .frosting div {
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.active {
+  color: #4dd0e1;
+  border-color: #4dd0e1 !important;
+}
+
+/* FOOTER */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  background:var(--bg);
+  color:var(--primary-text);
+}
+/* Shared Circle Styles */
+.social-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+.social-icons {
+  display: flex;           /* aligns children in a row */
+  gap: 10px;               /* space between buttons */
+  align-items: center;     /* vertically center if needed */
+}
+.social-circle img {
+  width: 30px;             /* adjust icon size */
+  height: 30px;
+}
+/* Hover effect */
+.social-circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.social-fb img {
+  width: 160%;
+  height: auto;
+  display: block;
+}
+.footer {
+  display: flex;
+  justify-content: space-around;
+  background: #8a4b2f;
+  color: white;
+  padding: 40px;
+}
+
+.footer h3 {
+  margin-bottom: 10px;
+}
