@@ -1,0 +1,66 @@
+/* product.css - product detail page */
+
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#222;}
+a{color:inherit; text-decoration:none}
+
+/* header (same structure as other pages) */
+.site-header{width:100%;border-bottom:1px solid #eee;background:#fff;position:sticky;top:0;z-index:30}
+.header-inner{max-width:1200px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.logo-wrap{display:flex;align-items:center;gap:10px}
+.site-logo{width:48px;height:auto;display:block}
+.brand{font-weight:700;color:#8e4d3a;font-size:20px}
+.header-right{display:flex;align-items:center;gap:20px}
+.search input{padding:8px 12px;border:1px solid #ddd;border-radius:24px;width:320px}
+.main-nav{display:flex;gap:18px}
+
+/* layout */
+.product-page{max-width:1200px;margin:18px auto;padding:0 16px}
+.product-container{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}
+
+/* media column */
+.media-column{position:relative}
+.back-btn{display:inline-block;margin-bottom:12px;padding:8px 10px;border-radius:999px;background:#e8f8f6;color:#0b9590;text-decoration:none}
+.main-image-wrap{background:#fff;border-radius:8px;padding:30px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,0.06)}
+.main-image-wrap img{max-width:100%;height:auto;display:block;max-height:420px;object-fit:contain}
+.thumbs{display:flex;gap:12px;margin-top:14px}
+.thumb-btn{background:#efe7e5;border-radius:12px;padding:8px;border:0;cursor:pointer}
+.thumb-btn img{width:86px;height:86px;object-fit:cover;border-radius:8px;display:block}
+
+/* details column */
+.details-column{background:#fff;padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.05)}
+.details-column h2{margin:0 0 8px;font-size:26px;color:#111}
+.meta-row{display:flex;gap:12px;align-items:center;margin-bottom:8px}
+.rating{color:#25c7c0;font-weight:700}
+.reviews{color:#666}
+.price-row{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.price{font-size:22px;font-weight:800;color:#3b2a22}
+.stock.in-stock{color:#0a8b5a;font-weight:700;background:#ecf9f4;padding:6px 10px;border-radius:8px}
+
+.description{color:#444}
+.specs{margin:8px 0 12px;padding-left:18px;color:#444}
+.specs li{margin-bottom:6px}
+
+.quantity-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.qty-control{display:flex;align-items:center;border-radius:999px;background:#f4f4f4;padding:4px}
+.qty-btn{background:transparent;border:0;padding:6px 12px;cursor:pointer;font-weight:700}
+#qty-input{width:54px;padding:6px;border:0;text-align:center;background:transparent;font-weight:600}
+
+.cta{display:inline-block;width:100%;background:#61d0cf;color:#042;padding:12px;border-radius:30px;border:0;font-weight:700;cursor:pointer;box-shadow:0 8px 18px rgba(97,208,207,0.25);margin-bottom:12px}
+
+.related-wrap{margin-top:12px}
+.related-grid{display:flex;gap:12px}
+.related-card{background:#efe7e5;border-radius:12px;padding:8px;width:120px;text-align:center}
+.related-card img{width:100%;height:80px;object-fit:cover;border-radius:8px;margin-bottom:6px}
+.related-name{font-size:13px;color:#4a2f25}
+
+/* footer spacing small fix */
+.footer{margin-top:30px}
+
+/* responsive */
+@media (max-width:1000px){
+  .product-container{grid-template-columns:1fr; padding-bottom:20px}
+  .details-column{order:2}
+  .media-column{order:1}
+  .search input{width:180px}
+}

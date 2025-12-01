@@ -1,0 +1,251 @@
+/*this is a css comment*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+
+:root {
+  --shadow-button: 0px 10px 25px 0px rgba(131, 218, 228, 0.45);
+}
+
+
+
+.homepage-bakemyway{
+  background-color:  #f5f5f5;
+  overflow:hidden;
+  width:  100%;
+  min-width:1512px;
+  height:982px;
+  position:relative;
+}
+
+.homepage-bakemyway.text {
+  position: absolute;
+  top:0;
+  left: 0;
+  font-family:"Inter-Regular",Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  }
+
+.homepage-bakemyway .rectangle{
+  position: absolute;
+  top: -52px;
+  left: 0;
+  width: 1562px;
+  height: 1034px;
+  background-color: #ffffff;
+}
+
+.homepage-bakemyway .img-bg {
+  position: absolute;
+  top: -108px;
+  left: -28px;
+  width: 834px;
+  height: 827px;
+}
+
+.homepage-bakemyway.vector{
+  position: absolute;
+  width: 78.02%;
+  height: 81.52%;
+  top: 13.06%;
+  left: 9.76%;
+}
+
+.homepage-bakemyway .img{
+  position: absolute;
+  width: 76.27%;
+  height: 74.53%;
+  top: 13.06%;
+  left: 3.36%;
+ }
+
+.homepage-bakemyway .chatgpt-image-nov {
+  position: absolute;
+  width: 52.12%;
+  top: 173px;
+  left: 16.27%;
+  height: 652px;
+  aspect-ratio: 0.67;
+  object-fit: cover;
+}
+
+.homepage-bakemyway .div {
+  position: absolute;
+  top: 646px;
+  left: 471px;
+  width: 256px;
+  height: 185px;
+  background-color: #eae3e1;
+}
+
+.homepage-bakemyway .signup-to-get-your {
+  position: absolute;
+  top: 205px;
+  left: 853px;
+  width: 433px;
+  font-family: "Poppins-Bold", Helvetica;
+  font-weight: 700;
+  color: #4f4f4f;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: 36px;
+}
+
+.homepage-bakemyway .text-wrapper {
+  font-family: "Poppins-Bold", Helvetica;
+  font-weight: 700;
+  color: #4f4f4f;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: 36px;
+}
+
+.homepage-bakemyway .rectangle-2 {
+  position: absolute;
+  top: 571px;
+  left: 25px;
+  width: 1462px;
+  height: 56px;
+  background-color: #d9c9c5;
+}
+
+.homepage-bakemyway .rectangle-3 {
+  position: absolute;
+  top: 644px;
+  left: 769px;
+  width: 284px;
+  height: 185px;
+  background-color: #eae3e1;
+}
+
+.homepage-bakemyway .text-wrapper-2 {
+  position: absolute;
+  top: 588px;
+  left: 286px;
+  width: 939px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins-Bold", Helvetica;
+  font-weight: 700;
+  color: #4f4f4f;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 36px;
+  white-space: nowrap;
+}
+
+.homepage-bakemyway .rectangle-4 {
+  position: absolute;
+  top: 643px;
+  left: 164px;
+  width: 245px;
+  height: 191px;
+  background-color: #eae3e1;
+  transform: rotate(0.16deg);
+}
+
+.homepage-bakemyway .rectangle-5 {
+  position: absolute;
+  top: 646px;
+  left: 1115px;
+  width: 251px;
+  height: 184px;
+  background-color: #eae3e1;
+}
+
+.homepage-bakemyway .screenshot {
+  position: absolute;
+  top: 654px;
+  left: 838px;
+  width: 179px;
+  height: 168px;
+  aspect-ratio: 1.06;
+  object-fit: cover;
+}
+
+.homepage-bakemyway .screenshot-2 {
+  top: 616px;
+  left: 490px;
+  width: 217px;
+  height: 244px;
+  aspect-ratio: 0.84;
+  position: absolute;
+  object-fit: cover;
+}
+
+.homepage-bakemyway .screenshot-3 {
+  top: 648px;
+  left: 164px;
+  width: 150px;
+  height: 174px;
+  aspect-ratio: 0.86;
+  position: absolute;
+  object-fit: cover;
+}
+
+.homepage-bakemyway .screenshot-4 {
+  top: 652px;
+  left: 1115px;
+  width: 195px;
+  height: 177px;
+  aspect-ratio: 1.1;
+  position: absolute;
+  object-fit: cover;
+}
+
+.homepage-bakemyway .rectangle-6 {
+  position: absolute;
+  width: 23.68%;
+  height: 7.43%;
+  top: 34.52%;
+  left: 56.55%;
+  border-radius: 2000px;
+  box-shadow: var(--shadow-button);
+  background: linear-gradient(
+    90deg,
+    rgba(97, 217, 232, 1) 0%,
+    rgba(74, 187, 201, 1) 100%
+  );
+}
+
+.homepage-bakemyway .text-wrapper-3 {
+  position: absolute;
+  top: 359px;
+  left: 987px;
+  width: 93px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 36px;
+  text-decoration: underline;
+  white-space: nowrap;
+}
