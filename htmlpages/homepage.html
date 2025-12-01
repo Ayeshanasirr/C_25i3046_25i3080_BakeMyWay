@@ -1,34 +1,129 @@
-<!--this is an html comment-->
-<!--this is second comment-->
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="styleguide.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="homepage-bakemyway">
-      <div class="text"></div>
-      <div class="rectangle"></div>
-      <div class="img_bg" src="../pics/img_bg.png">
-        <img class="chatgpt-image-nov" src="../pics/ChatGPT_Image_Nov_12__2025__11_45_10_PM-removebg-preview 1.png" />
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BakeMyWay — Home</title>
+  <link rel="stylesheet" href="../css/homepage.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-wrap">
+        <img class="site-logo" src="../pics/ChatGPT_Image_Nov_12__2025__11_45_10_PM-removebg-preview 1.png" alt="BakeMyWay logo">
+        <span class="brand">BakeMyWay</span>
       </div>
-      <div class="div"></div>
-      <p class="signup-to-get-your"><span class="text-wrapper">Signup to get your Perfect Celebration Cakes !</span></p>
-      <div class="rectangle-2"></div>
-      <div class="rectangle-3"></div>
-      <div class="text-wrapper-2">Our Freatured Cakes</div>
-      <div class="rectangle-4"></div>
-      <div class="rectangle-5"></div>
-      <img class="screenshot" src="../pics/Screenshot_2025-11-12_233900-removebg-preview 1.png" />
-      <img class="screenshot-2" src="../pics/Screenshot_2025-11-12_231509-removebg-preview 1.png" />
-      <img class="screenshot-3" src="../pics/Screenshot_2025-11-12_232459-removebg-preview 1.png" />
-      <img class="screenshot-4" src="../pics/Screenshot_2025-11-12_231908-removebg-preview 1.png" />
-      <div class="rectangle-6"></div>
-      <div class="text-wrapper-3">SignUp</div>
+
+      <div class="header-right">
+        <div class="search">
+          <input id="search-input" type="search" placeholder="Search products..." />
+        </div>
+        <nav class="main-nav">
+          <a class="nav-link" href="homepage.html">Home</a>
+          <a class="nav-link" href="products.html">Products</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+      </div>
     </div>
-  </body>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <img class="hero-bg" src="../pics/img_bg.png" alt="">
+        
+      </div>
+
+      <div class="hero-right">
+        <h1 class="hero-title">Signup to get your perfect celebration cakes</h1>
+        
+        <div class="hero-ctas">
+          <button id="signup-btn" class="btn outline">Sign Up</button>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="featured-products">
+      <div class="section-head">
+        <h2>Featured Products</h2>
+
+      </div>
+
+      <div class="product-row" id="product-row">
+        <div class="product-card">
+          <img src="../pics/Screenshot_2025-11-12_232459-removebg-preview 1.png" >
+          <div class="product-info">
+            
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="../pics/Screenshot_2025-11-12_231509-removebg-preview 1.png" >
+          <div class="product-info">
+            
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="../pics/Screenshot_2025-11-12_233900-removebg-preview 1.png" >
+          <div class="product-info">
+           
+          </div>
+        </div>
+
+         <div class="product-card">
+          <img src="../pics/Screenshot_2025-11-12_231908-removebg-preview 1.png" >
+          <div class="product-info">
+            
+          </div>
+        </div>
+      </div>
+
+         
+    </section>
+
+    
+
+    
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <h3>BakeMyWay</h3>
+        <p>Create your perfect custom cake with our easy-to-use tool.</p>
+        <p>  Choose your shape, flavor and frosting!</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a>Terms & Conditions</a></li>
+          <li><a>Privacy Policyt</a></li>
+          <li><a>Returns & Refunds</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <p>info@bakemyway.com</p>
+        <p>(+92)394 - 82110</p>
+        <p>123 Bakery Lane</p>
+        <p>New York, NY 10001</p>
+
+      </div>
+
+      <div>
+        <h4>Follow Us</h4>
+        <img class="site-logo" src="../pics/ChatGPT_Image_Nov_12__2025__11_45_10_PM-removebg-preview 1.png" >
+    
+
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="../javascript/homepage.js"></script>
+</body>
 </html>
