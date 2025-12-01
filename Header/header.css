@@ -1,0 +1,44 @@
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px 40px;
+  background: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img1 {
+    width: 20;
+    height: 20;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 12px;
+}
+.tiny-img {
+  width: 10px;
+  height: 10px;
+}
+
+.search input {
+  padding: 8px 15px;
+  width: 200px;
+  border-radius: 20px;
+  border: none;
+  background: #eee;
+}
+
+nav a {
+  margin: 0 8px;
+  text-decoration: none;
+  color: black;
+}
+
+.icons {
+  font-size: 16px;
+}
