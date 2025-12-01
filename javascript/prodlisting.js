@@ -1,4 +1,6 @@
-// basic product data (id, name, category, price, rating, image)
+// products.js - client-side rendering for product listing
+// NOTE: This page intentionally does not add alerts or console.log (homepage handles required alerts/logs)
+
 const PRODUCTS = [
   { id:1, name:"The Classic Vanilla Cloud", category:"Cakes", price:34.99, rating:4.9, reviews:120, image:"../pics/cake2.png", description:"Light vanilla cake with cream." },
   { id:2, name:"Dark Chocolate Cream", category:"Cakes", price:40.00, rating:4.8, reviews:95, image:"../pics/cake1.png", description:"Rich dark chocolate layer cake." },
@@ -10,13 +12,6 @@ const PRODUCTS = [
   { id:8, name:"Sparkle Birthday Candles", category:"Decor", price:12.00, rating:4.6, reviews:40, image:"../pics/candles.png", description:"Sparkle candles for cakes." }
 ];
 
-// build category list from products
-function getCategories() {
-  const set = new Set(PRODUCTS.map(p => p.category));
-  return ["All", ...Array.from(set)];
-}
-
-// DOM refs
 const categoryListEl = document.getElementById("category-list");
 const productsGridEl = document.getElementById("products-grid");
 const resultsCountEl = document.getElementById("results-count");
@@ -29,8 +24,13 @@ let currentQuery = "";
 let currentSort = "default";
 let currentRatings = [];
 
-// render categories
+function getCategories() {
+  const set = new Set(PRODUCTS.map(p => p.category));
+  return ["All", ...Array.from(set)];
+}
+
 function renderCategories() {
+  if (!categoryListEl) return;
   const cats = getCategories();
   categoryListEl.innerHTML = "";
   cats.forEach(cat => {
@@ -46,33 +46,41 @@ function renderCategories() {
   });
 }
 
-// apply filters and sorting, then render
-function renderProducts() {
+function escapeHtml(str){
+  return String(str).replace(/[&<>"']/g, function(m){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]); });
+}
+
+function attachAddToCart(){
+  const adds = Array.from(document.querySelectorAll(".add-cart"));
+  adds.forEach(btn => {
+    btn.removeEventListener("click", onAddToCart);
+    btn.addEventListener("click", onAddToCart);
+  });
+}
+
+function onAddToCart(e){
+  const name = e.currentTarget.getAttribute("data-name") || "Product";
+  // local UI feedback only (homepage handles alerts/logs)
+  e.currentTarget.textContent = "Added";
+  e.currentTarget.disabled = true;
+  e.currentTarget.style.opacity = "0.7";
+}
+
+function renderProducts(){
+  if (!productsGridEl || !resultsCountEl) return;
   let out = PRODUCTS.slice();
 
-  // category filter
-  if (currentCategory !== "All") {
-    out = out.filter(p => p.category === currentCategory);
-  }
+  if (currentCategory !== "All") out = out.filter(p => p.category === currentCategory);
 
-  // rating filters
-  if (currentRatings.length > 0) {
-    // keep items that meet at least one selected rating threshold
-    out = out.filter(p => currentRatings.some(r => p.rating >= parseFloat(r)));
-  }
+  if (currentRatings.length > 0) out = out.filter(p => currentRatings.some(r => p.rating >= parseFloat(r)));
 
-  // search filter
   const q = currentQuery.trim().toLowerCase();
-  if (q !== "") {
-    out = out.filter(p => (p.name + " " + p.description).toLowerCase().includes(q));
-  }
+  if (q !== "") out = out.filter(p => (p.name + " " + p.description).toLowerCase().includes(q));
 
-  // sort
   if (currentSort === "price-asc") out.sort((a,b) => a.price - b.price);
   else if (currentSort === "price-desc") out.sort((a,b) => b.price - a.price);
   else if (currentSort === "rating-desc") out.sort((a,b) => b.rating - a.rating);
 
-  // render
   productsGridEl.innerHTML = "";
   out.forEach(p => {
     const card = document.createElement("div");
@@ -93,51 +101,23 @@ function renderProducts() {
   });
 
   resultsCountEl.textContent = `Showing ${out.length} product${out.length !== 1 ? "s" : ""}`;
-  // attach add-to-cart handlers
   attachAddToCart();
 }
 
-// attach handlers for add-to-cart buttons (no alerts here)
-function attachAddToCart() {
-  const adds = Array.from(document.querySelectorAll(".add-cart"));
-  adds.forEach(btn => {
-    btn.removeEventListener("click", onAddToCart);
-    btn.addEventListener("click", onAddToCart);
-  });
-}
-
-function onAddToCart(e) {
-  const name = e.currentTarget.getAttribute("data-name") || "Product";
-  // this page intentionally does not create alerts/logs so cart action is simulated silently
-  // you can integrate with site-wide cart code here
-  e.currentTarget.textContent = "Added";
-  e.currentTarget.disabled = true;
-  e.currentTarget.style.opacity = "0.7";
-}
-
-// helper to read rating checkboxes
-function updateRatings() {
+function updateRatings(){
   currentRatings = ratingCheckboxes.filter(ch => ch.checked).map(ch => ch.value);
 }
 
-// helper to escape HTML (simple)
-function escapeHtml(str){
-  return String(str).replace(/[&<>"']/g, function(m){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]); });
+if (searchInput) {
+  searchInput.addEventListener("input", function(e){
+    currentQuery = e.target.value;
+    renderProducts();
+  });
 }
-
-// wire up search and sort
-searchInput.addEventListener("input", function(e){
-  currentQuery = e.target.value;
-  renderProducts();
-});
-sortSelect.addEventListener("change", function(e){
-  currentSort = e.target.value;
-  renderProducts();
-});
-ratingCheckboxes.forEach(cb => cb.addEventListener("change", function(){
-  updateRatings();
-  renderProducts();
-}));
+if (sortSelect) {
+  sortSelect.addEventListener("change", function(e){ currentSort = e.target.value; renderProducts(); });
+}
+ratingCheckboxes.forEach(cb => cb.addEventListener("change", function(){ updateRatings(); renderProducts(); }));
 
 // init
 currentCategory = "All";
